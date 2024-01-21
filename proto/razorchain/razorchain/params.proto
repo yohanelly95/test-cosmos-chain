@@ -1,0 +1,15 @@
+syntax = "proto3";
+package razorchain.razorchain;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "razorChain/x/razorchain/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "razorchain/x/razorchain/Params";
+  option (gogoproto.equal) = true;
+
+  
+}

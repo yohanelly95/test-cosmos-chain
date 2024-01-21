@@ -1,0 +1,17 @@
+syntax = "proto3";
+package razorchain.razorchain;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "razorchain/razorchain/params.proto";
+
+option go_package = "razorChain/x/razorchain/types";
+
+// GenesisState defines the razorchain module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}
