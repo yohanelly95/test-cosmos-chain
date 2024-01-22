@@ -1,21 +1,49 @@
 version: 1
+build:
+  binary: razorChaind
+  proto:
+    path: proto
+    third_party_paths:
+    - third_party/proto
+    - proto_vendor
 accounts:
 - name: alice
   coins:
-  - 20000token
-  - 200000000stake
+  - 100000000uatom
+  - 100000000000000000000arzr
 - name: bob
   coins:
-  - 10000token
-  - 100000000stake
-client:
-  openapi:
-    path: docs/static/openapi.yml
+  - 5000000000000arzr
 faucet:
   name: bob
   coins:
-  - 5token
-  - 100000stake
+  - 10arzr
+  host: 0.0.0.0:4500
+client:
+  typescript:
+    path: ts-client
+  hooks:
+    path: react/src/hooks
+genesis:
+  app_state:
+    crisis:
+      constant_fee:
+        denom: arzr
+    evm:
+      params:
+        evm_denom: arzr
+    gov:
+      deposit_params:
+        min_deposit:
+        - amount: "10000000"
+          denom: arzr
+    mint:
+      params:
+        mint_denom: arzr
+    staking:
+      params:
+        bond_denom: arzr
+  chain_id: rzrd_771-1
 validators:
 - name: alice
-  bonded: 100000000stake
+  bonded: 100000000000000000000arzr
