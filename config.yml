@@ -10,14 +10,14 @@ accounts:
 - name: alice
   coins:
   - 100000000uatom
-  - 100000000000000000000arzr
+  - 100000000000000000000stake
 - name: bob
   coins:
-  - 5000000000000arzr
+  - 5000000000000stake
 faucet:
   name: bob
   coins:
-  - 10arzr
+  - 10stake
   host: 0.0.0.0:4500
 client:
   typescript:
@@ -28,22 +28,22 @@ genesis:
   app_state:
     crisis:
       constant_fee:
-        denom: arzr
+        denom: stake
     evm:
       params:
-        evm_denom: arzr
+        evm_denom: stake
     gov:
       deposit_params:
         min_deposit:
         - amount: "10000000"
-          denom: arzr
+          denom: stake
     mint:
       params:
-        mint_denom: arzr
+        mint_denom: stake
     staking:
       params:
-        bond_denom: arzr
+        bond_denom: stake
   chain_id: rzrd_771-1
 validators:
 - name: alice
-  bonded: 100000000000000000000arzr
+  bonded: 100000000000000000000stake
